@@ -13,6 +13,7 @@ class _CoffeeMenuState extends State<CoffeeMenu> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Material(
+        color: Color(0xFF413132),
         child: CustomScrollView(
           slivers: [
             SliverPersistentHeader(
@@ -25,7 +26,7 @@ class _CoffeeMenuState extends State<CoffeeMenu> {
                       title: Text("Index: $index"),
                     ),
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -13,9 +13,10 @@ class MySliverAppBar extends SliverPersistentHeaderDelegate {
       fit: StackFit.expand,
       overflow: Overflow.visible,
       children: [
-        Image.network(
-          "https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-          fit: BoxFit.cover,
+        Container(
+          decoration: BoxDecoration(
+            color: Color(0xFF413132),
+          ),
         ),
         Center(
           child: Opacity(
