@@ -1,5 +1,7 @@
+import 'package:coffee_cup/widgets/my_silver_appbar.dart';
 import 'package:flutter/material.dart';
-import 'package:coffee_cup/constants.dart';
+
+
 
 class CoffeeMenu extends StatefulWidget {
   @override
@@ -9,31 +11,26 @@ class CoffeeMenu extends StatefulWidget {
 class _CoffeeMenuState extends State<CoffeeMenu> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            expandedHeight: 100.0,
-            floating: false,
-            pinned: true,
-            flexibleSpace: FlexibleSpaceBar(
-              centerTitle:true,
-              title: Text(
-                'Choose your drink',
-                style: kLableTextStyle,
-              ),
+    return SafeArea(
+      child: Material(
+        child: CustomScrollView(
+          slivers: [
+            SliverPersistentHeader(
+              delegate: MySliverAppBar(expandedHeight: 160),
+              pinned: true,
             ),
-          ),
-          SliverFixedExtentList(
-            itemExtent: 150.0,
-            delegate: SliverChildBuilderDelegate(
-              (context, index) => ListTile(
-                title: Text("List item $index"),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (_, index) => ListTile(
+                      title: Text("Index: $index"),
+                    ),
               ),
-            ),
-          ),
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
 }
+
+
